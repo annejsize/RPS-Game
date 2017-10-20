@@ -1,0 +1,38 @@
+/*font-family: 'Droid Serif', serif;
+font-family: 'Bowlby One', cursive;
+font-family: 'Lato', sans-serif;*/
+
+h2, h4, p {
+font-family: 'Lato', sans-serif;
+}
+
+h1, h3 {
+font-family: 'Bowlby One', cursive;
+font-size: 20px;
+
+}
+
+.text-control {
+  width: 25%;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+div {
+  border-radius: -5px;
+}
+
+.input-group {
+  text-align: center;
+}
+
+
+.height {
+  height: 150px
+}
+
+img {
+  width: 100px;
+  height: auto;
+  padding: 15px;
+}

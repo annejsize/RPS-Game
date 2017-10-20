@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html lang="en-us">
+
+<head>
+
+  <meta charset="UTF-8">
+  <title>Rock Paper Scissors</title>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" type="text/css" href="assets/reset.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="assets/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Bowlby+One|Droid+Serif|Lato:300" rel="stylesheet">
+
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/4.5.2/firebase.js"></script>
+
+  <!-- Moment.js Reference -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Jumbotron -->
+    <div class="jumbotron">
+      <h1 class="text-center">rock | paper | scissors</h1>
+      <p>
+          <div class="input-group input-group-sm">
+            <span class="input-group-addon">
+            </span>
+          <input type="text" placeholder="Your Name" class="text-control" id="player-name">
+          <input type="submit" class="btn btn-sm" id="name-submit" value = "submit">
+        </div>
+      </p>
+    </div>
+
+
+      <div class="container">
+
+    <div class="row">
+      <!-- Player One-->
+      <div class="col-lg-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" id="playername-1"><strong>player one.</strong></h3>
+          </div>
+          <div class="panel-body height"  id="image-holder1">
+              <h4>Waiting for Player One</h4>
+          </div>
+          <div class="panel-footer" id="one-score">
+          </div>
+        </div>
+      </div>
+
+      <!-- Status-->
+      <div class="col-lg-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" id="status" ><strong>status.</strong></h3>
+          </div>
+          <div class="panel-body height" id="status-update"><h4></h4>
+          </div>
+        </div>
+      </div>
+
+      <!-- Player Two  -->
+      <div class="col-lg-4">
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title" id= "playername-2"><strong>player two.</strong></h3>
+          </div>
+          <div class="panel-body height" id="image-holder2">
+              <h4>Waiting for Player Two</h4>
+          </div>
+          <div class="panel-footer" id="two-score">
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Chat Room  -->
+    <div class="row">
+      <div class="col-lg-3">
+      </div>
+
+      <div class="col-lg-6">
+
+        <div class="panel panel-primary">
+          <div class="panel-heading">
+            <h3 class="panel-title"><strong>Chatroom</strong></h3>
+          </div>
+          <div class="panel-body">
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-3">
+      </div>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script src="game.js"></script>
+
+</body>
+
+</html>
