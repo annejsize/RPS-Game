@@ -28,58 +28,39 @@ $("#name-submit").on("click", function(event) {
 
 if (counter === 0) {
   console.log(counter);
-  counter++;
   name = $("#player-name").val().trim();
   var playOneWin = 0;
   var playOneLoss = 0;
-  database.ref().push({
+  database.ref("/playerinfo").push({
     name: name,
     onewin: playOneWin,
     oneloss: playOneLoss,
-    dateadded: firebase.database.ServerValue.TIMESTAMP
+    dateadded: firebase.database.ServerValue.TIMESTAMP,
+    counter: counter
     });
-  return false;
     }
 
   else if (counter === 1) {
     console.log(counter);
-    counter++;
     name = $("#player-name").val().trim();
     var playTwoWin = 0;
     var playTwoLoss = 0;
-    database.ref().push({
+    database.ref("/playerinfo").push({
       name: name,
       twowin: playTwoWin,
       twoloss: playTwoLoss,
-      dateadded: firebase.database.ServerValue.TIMESTAMP
+      dateadded: firebase.database.ServerValue.TIMESTAMP,
   });
   name=name;
   twoWin=playTwoWin;
   twoLoss=playTwoLoss;
 }
+counter++;
 });
 
-var connectionsRef = database.ref("/connections");
 
-// '.info/connected' is a special location provided by Firebase that is updated
-// every time the client's connection state changes.
-// '.info/connected' is a boolean value, true if the client is connected and false if they are not.
-var connectedRef = database.ref(".info/connected");
 
-// When the client's connection state changes...
-connectedRef.on("value", function(snap) {
-
-  // If they are connected..
-  if (snap.val()) {
-
-    // Add user to the connections list.
-    var con = connectionsRef.push(true);
-    // Remove user from the connection list when they disconnect.
-    con.onDisconnect().remove();
-  }
-});
-
-database.ref().on("child_added", function(childSnapshot) {
+database.ref("/playerinfo").on("child_added", function(childSnapshot) {
 console.log(counter);
  if (counter === 0) {
   // full list of items to the well
